@@ -1,1 +1,1 @@
-- [`DeepLink`]()
+- [`DeepLink`](https://github.com/ssan9woo/mobile/blob/main/note/DeepLink.md)
