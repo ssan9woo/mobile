@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gxY-IT-2MQ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Alarm-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AlarmViewController" customModule="DailyAlarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HCh-Ff-2Rp">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="normalAlarmCell" rowHeight="100" id="jSr-rQ-Uye" customClass="NormalAlarmCell" customModule="DailyAlarm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jSr-rQ-Uye" id="HFQ-DP-N4c">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lXh-kV-6nh">
+                                                    <rect key="frame" x="327" y="17" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="alarmOnOffSwitch:" destination="jSr-rQ-Uye" eventType="valueChanged" id="IQO-WD-aX0"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오전 12:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6J-Vn-qDz">
+                                                    <rect key="frame" x="20" y="13" width="161" height="42"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요 석상우입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVh-S0-Oct">
+                                                    <rect key="frame" x="20" y="63" width="171" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월 화 수 목 금 토" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCt-n0-XFL">
+                                                    <rect key="frame" x="266" y="61" width="110" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uCt-n0-XFL" firstAttribute="top" secondItem="lXh-kV-6nh" secondAttribute="bottom" constant="13" id="6OJ-qH-oTd"/>
+                                                <constraint firstItem="pVh-S0-Oct" firstAttribute="leading" secondItem="a6J-Vn-qDz" secondAttribute="leading" id="D7j-bU-Jai"/>
+                                                <constraint firstItem="pVh-S0-Oct" firstAttribute="top" secondItem="a6J-Vn-qDz" secondAttribute="bottom" constant="8" symbolic="YES" id="O2C-Yr-8dI"/>
+                                                <constraint firstItem="uCt-n0-XFL" firstAttribute="trailing" secondItem="lXh-kV-6nh" secondAttribute="trailing" id="WOV-I9-Xde"/>
+                                                <constraint firstItem="a6J-Vn-qDz" firstAttribute="leading" secondItem="HFQ-DP-N4c" secondAttribute="leading" constant="20" id="bVx-7H-c4l"/>
+                                                <constraint firstAttribute="trailing" secondItem="lXh-kV-6nh" secondAttribute="trailing" constant="38" id="dGe-Ho-6OW"/>
+                                                <constraint firstItem="a6J-Vn-qDz" firstAttribute="top" secondItem="HFQ-DP-N4c" secondAttribute="top" constant="13" id="ipx-dH-K5T"/>
+                                                <constraint firstItem="lXh-kV-6nh" firstAttribute="top" secondItem="HFQ-DP-N4c" secondAttribute="top" constant="17" id="xgd-kF-SQ2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="alarmDay" destination="uCt-n0-XFL" id="kaS-ov-GtK"/>
+                                            <outlet property="label" destination="pVh-S0-Oct" id="QWz-i6-tsW"/>
+                                            <outlet property="normalAlarmSwitch" destination="lXh-kV-6nh" id="Eal-VS-tMy"/>
+                                            <outlet property="timeLabel" destination="a6J-Vn-qDz" id="K2f-Ly-S0u"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="quickAlarmCell" rowHeight="100" id="imn-Fw-HuR" customClass="QuickAlarmCell" customModule="DailyAlarm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="imn-Fw-HuR" id="gVC-LS-43C">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCv-Ya-lw8">
+                                                    <rect key="frame" x="327" y="34.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="alarmOnOffSwitch:" destination="imn-Fw-HuR" eventType="valueChanged" id="rSA-JU-Efd"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15분 뒤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgz-Pb-wQ9">
+                                                    <rect key="frame" x="20" y="29" width="107.5" height="42"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bgz-Pb-wQ9" firstAttribute="leading" secondItem="gVC-LS-43C" secondAttribute="leading" constant="20" id="7kr-YU-v8b"/>
+                                                <constraint firstAttribute="trailing" secondItem="eCv-Ya-lw8" secondAttribute="trailing" constant="38" id="GLT-qP-s2E"/>
+                                                <constraint firstItem="bgz-Pb-wQ9" firstAttribute="centerY" secondItem="gVC-LS-43C" secondAttribute="centerY" id="iMm-gC-Bje"/>
+                                                <constraint firstItem="eCv-Ya-lw8" firstAttribute="centerY" secondItem="gVC-LS-43C" secondAttribute="centerY" id="lnY-lG-Nns"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="quickAlarmSwitch" destination="eCv-Ya-lw8" id="tjn-LU-9d9"/>
+                                            <outlet property="timeLabel" destination="bgz-Pb-wQ9" id="ShK-0M-Qck"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="NP4-7j-5XU"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="OZ5-Fh-rHY"/>
+                                </connections>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UiN-9D-0cN">
+                                <rect key="frame" x="344" y="712" width="50" height="50"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2o-cJ-M7i">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="X6h-Xy-alW"/>
+                                            <constraint firstAttribute="width" constant="50" id="pHa-Ap-qgQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="퀵">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addQuickAlarmButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0kA-cf-u7g"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iii-xd-vxp">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Hg3-li-dJm"/>
+                                            <constraint firstAttribute="width" constant="50" id="aYl-ga-Ajq"/>
+                                        </constraints>
+                                        <state key="normal" title="일반">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addNormalAlarmButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GZW-6s-mtO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixY-Wm-r61">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="LZg-hD-C8r"/>
+                                            <constraint firstAttribute="height" constant="50" id="Ry3-1A-77d"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" image="plus" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addAlarm:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j86-QN-hFR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HCh-Ff-2Rp" secondAttribute="bottom" id="20z-94-IiC"/>
+                            <constraint firstItem="HCh-Ff-2Rp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5EP-y1-y1O"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UiN-9D-0cN" secondAttribute="trailing" constant="20" id="7nQ-ww-fT0"/>
+                            <constraint firstItem="HCh-Ff-2Rp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T8r-bO-bjl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HCh-Ff-2Rp" secondAttribute="trailing" id="sDC-gE-MVe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UiN-9D-0cN" secondAttribute="bottom" constant="100" id="xuD-Py-1lq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Alarm" id="0Tl-Wc-bXa">
+                        <barButtonItem key="rightBarButtonItem" title="편집" id="RbR-BJ-ivI"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addAlarmButton" destination="ixY-Wm-r61" id="z08-11-MwM"/>
+                        <outlet property="addNomalAlarm" destination="Iii-xd-vxp" id="7he-Nk-lc6"/>
+                        <outlet property="addQuickAlarm" destination="m2o-cJ-M7i" id="TBf-2f-GOS"/>
+                        <outlet property="alarmTable" destination="HCh-Ff-2Rp" id="1e8-Xl-kpf"/>
+                        <outlet property="floatingStackView" destination="UiN-9D-0cN" id="pFM-eR-34Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="744.92753623188412" y="114.50892857142857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ESE-fU-XLC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gxY-IT-2MQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="NhM-2k-p2F">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="d7E-e6-593"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CzT-AV-Iug" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-165.21739130434784" y="114.50892857142857"/>
+        </scene>
+        <!--Quick Alarm View Controller-->
+        <scene sceneID="nf5-9g-tNM">
+            <objects>
+                <viewController storyboardIdentifier="quickAlarm" id="OWZ-9Z-m7L" customClass="QuickAlarmViewController" customModule="DailyAlarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EKq-nd-sKt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Js6-9a-XCw">
+                                <rect key="frame" x="0.0" y="483" width="414" height="413"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="T8i-jB-hwo">
+                                        <rect key="frame" x="57" y="145" width="300" height="130"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Dx8-0k-FiB">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E24-S2-tL3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="Hpq-Pa-FV7"/>
+                                                            <constraint firstAttribute="height" constant="50" id="wTP-ix-2iw"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <state key="normal" title="+1분">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="addMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="s3L-cP-a0r"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxO-dB-NqQ">
+                                                        <rect key="frame" x="110" y="0.0" width="80" height="50"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="ADu-vE-lQW"/>
+                                                            <constraint firstAttribute="width" constant="80" id="a28-AW-YdX"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <state key="normal" title="+5분">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="addMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="vXS-9z-P8U"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLt-nD-eGq">
+                                                        <rect key="frame" x="220" y="0.0" width="80" height="50"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="Oaw-u1-NaR"/>
+                                                            <constraint firstAttribute="height" constant="50" id="y4I-Tk-aeu"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <state key="normal" title="+10분">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="addMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="qb4-jc-Pf4"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Uby-xQ-4dZ">
+                                                <rect key="frame" x="0.0" y="80" width="300" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yus-Us-OFu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="boB-Hk-VxA"/>
+                                                            <constraint firstAttribute="width" constant="80" id="kju-MI-gL2"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <state key="normal" title="+15분">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="addMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="Zia-PW-J5l"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aww-tM-YNj">
+                                                        <rect key="frame" x="110" y="0.0" width="80" height="50"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="MX5-CT-A3x"/>
+                                                            <constraint firstAttribute="height" constant="50" id="pe7-o4-sD7"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <state key="normal" title="+30분">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="addMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="pNU-mC-Lec"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="60" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bca-zu-98k">
+                                                        <rect key="frame" x="220" y="0.0" width="80" height="50"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="9Wl-mU-B5q"/>
+                                                            <constraint firstAttribute="width" constant="80" id="HVO-Mg-vGp"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <state key="normal" title="+1시간">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="addMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="wSD-OM-SUv"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4es-Xk-KgU">
+                                        <rect key="frame" x="57" y="300" width="300" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9g-2N-OHk">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="jEx-M3-8V8"/>
+                                                    <constraint firstAttribute="height" constant="50" id="peG-AK-Tpt"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="return" catalog="system">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="LlS-GR-Elj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZT-P3-SSg">
+                                                <rect key="frame" x="110" y="0.0" width="190" height="50"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="190" id="HYt-kq-bhq"/>
+                                                    <constraint firstAttribute="height" constant="50" id="tnd-fk-FTW"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="완료" image="checkmark" catalog="system">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="complete:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="ghd-vw-0Ly"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Alarm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTQ-ke-PID">
+                                        <rect key="frame" x="146" y="14" width="122" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 0분" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2SS-HM-6pl">
+                                        <rect key="frame" x="154.5" y="59" width="105.5" height="53"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOE-Ct-Wkk">
+                                        <rect key="frame" x="373" y="15" width="26" height="25.5"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="xmark" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="exit:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="M3u-iK-bdk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="2SS-HM-6pl" firstAttribute="centerX" secondItem="Js6-9a-XCw" secondAttribute="centerX" id="20T-bK-cox"/>
+                                    <constraint firstItem="4es-Xk-KgU" firstAttribute="top" secondItem="T8i-jB-hwo" secondAttribute="bottom" constant="25" id="CsW-H1-6Qw"/>
+                                    <constraint firstItem="4es-Xk-KgU" firstAttribute="centerX" secondItem="Js6-9a-XCw" secondAttribute="centerX" id="Emu-UK-x3p"/>
+                                    <constraint firstItem="BOE-Ct-Wkk" firstAttribute="top" secondItem="Js6-9a-XCw" secondAttribute="top" constant="15" id="jyy-dh-mTe"/>
+                                    <constraint firstAttribute="trailing" secondItem="BOE-Ct-Wkk" secondAttribute="trailing" constant="15" id="keF-Ld-p0y"/>
+                                    <constraint firstItem="T8i-jB-hwo" firstAttribute="top" secondItem="2SS-HM-6pl" secondAttribute="bottom" constant="33" id="nfO-7V-I9b"/>
+                                    <constraint firstItem="T8i-jB-hwo" firstAttribute="centerX" secondItem="Js6-9a-XCw" secondAttribute="centerX" id="qrR-TN-16z"/>
+                                    <constraint firstItem="2SS-HM-6pl" firstAttribute="top" secondItem="uTQ-ke-PID" secondAttribute="bottom" constant="18.5" id="rWd-5u-gIS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="79A-zM-Moo"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="Js6-9a-XCw" firstAttribute="leading" secondItem="79A-zM-Moo" secondAttribute="leading" id="9jF-xT-e8i"/>
+                            <constraint firstItem="uTQ-ke-PID" firstAttribute="top" secondItem="79A-zM-Moo" secondAttribute="top" constant="453" id="RjK-Sk-ciL"/>
+                            <constraint firstItem="Js6-9a-XCw" firstAttribute="top" secondItem="79A-zM-Moo" secondAttribute="top" constant="439" id="aO0-zE-Sv1"/>
+                            <constraint firstItem="79A-zM-Moo" firstAttribute="trailing" secondItem="Js6-9a-XCw" secondAttribute="trailing" id="dWc-rG-Tik"/>
+                            <constraint firstItem="Js6-9a-XCw" firstAttribute="bottom" secondItem="79A-zM-Moo" secondAttribute="bottom" constant="34" id="i5e-bx-i8v"/>
+                            <constraint firstItem="uTQ-ke-PID" firstAttribute="centerX" secondItem="79A-zM-Moo" secondAttribute="centerX" id="pVK-sN-nn2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="quickAlarmSettingView" destination="Js6-9a-XCw" id="VHG-VB-W9P"/>
+                        <outlet property="quickAlarmTimeLabel" destination="2SS-HM-6pl" id="kKe-TH-Se8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JVJ-rB-Fqk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1637.68115942029" y="-224.33035714285714"/>
+        </scene>
+        <!--Normal Alarm View Controller-->
+        <scene sceneID="mCB-MW-hXg">
+            <objects>
+                <viewController storyboardIdentifier="normalAlarm" id="rAY-gq-Qrf" customClass="NormalAlarmViewController" customModule="DailyAlarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GeR-FV-jUT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CvU-WD-suG">
+                                <rect key="frame" x="0.0" y="483" width="414" height="413"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2c7-l5-5hI">
+                                        <rect key="frame" x="36" y="288" width="342" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="레이블 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4t-Bw-K2C">
+                                                <rect key="frame" x="0.0" y="0.0" width="82" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GPZ-4w-c73">
+                                                <rect key="frame" x="92" y="0.0" width="250" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="SbB-bT-i7I"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DcS-4t-afD">
+                                        <rect key="frame" x="37" y="210" width="340" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUO-Yc-bUn">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="NlX-Pk-7Zw"/>
+                                                    <constraint firstAttribute="height" constant="40" id="hQN-av-gT8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="일">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="jNy-DT-Gyd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEF-Xd-ial">
+                                                <rect key="frame" x="50" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="1AE-kn-btq"/>
+                                                    <constraint firstAttribute="height" constant="40" id="3E0-6i-xL4"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="월">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="Qhx-bb-B88"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2l8-t2-mOS">
+                                                <rect key="frame" x="100" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Fe8-qb-ZtZ"/>
+                                                    <constraint firstAttribute="width" constant="40" id="ZKS-mt-tih"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="화">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="54w-ij-KDR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIh-kF-idN">
+                                                <rect key="frame" x="150" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="pm4-jP-Ahh"/>
+                                                    <constraint firstAttribute="height" constant="40" id="sD8-kW-a6h"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="수">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="J9U-2w-fnq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ylr-iQ-I7d">
+                                                <rect key="frame" x="200" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="kXP-HS-SO6"/>
+                                                    <constraint firstAttribute="height" constant="40" id="nKY-Qr-qSe"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="목">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="VQ6-bw-La0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0V-10-qyH">
+                                                <rect key="frame" x="250" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="HsR-El-cae"/>
+                                                    <constraint firstAttribute="width" constant="40" id="JLJ-th-ldt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="금">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="Vix-Y5-LVC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dca-Um-UIf">
+                                                <rect key="frame" x="300" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="PwF-Qg-nYa"/>
+                                                    <constraint firstAttribute="height" constant="40" id="iuH-6D-6xg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="토">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="IA3-dk-Q6R"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bud-TQ-PKU">
+                                        <rect key="frame" x="360" y="15" width="39" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="저장">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="completion:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="uCp-0a-E1r"/>
+                                        </connections>
+                                    </button>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="laE-IZ-Ibp">
+                                        <rect key="frame" x="47" y="72" width="320" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Otm-rx-TH9"/>
+                                        </constraints>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="laE-IZ-Ibp" firstAttribute="centerX" secondItem="CvU-WD-suG" secondAttribute="centerX" id="4g3-EF-ty3"/>
+                                    <constraint firstItem="2c7-l5-5hI" firstAttribute="top" secondItem="DcS-4t-afD" secondAttribute="bottom" constant="38" id="D16-qw-f2y"/>
+                                    <constraint firstAttribute="trailing" secondItem="bud-TQ-PKU" secondAttribute="trailing" constant="15" id="Qio-S9-T71"/>
+                                    <constraint firstItem="2c7-l5-5hI" firstAttribute="centerX" secondItem="DcS-4t-afD" secondAttribute="centerX" id="ZUO-cT-7lE"/>
+                                    <constraint firstItem="laE-IZ-Ibp" firstAttribute="top" secondItem="bud-TQ-PKU" secondAttribute="bottom" constant="18" id="g6P-Vo-iNy"/>
+                                    <constraint firstItem="DcS-4t-afD" firstAttribute="centerX" secondItem="laE-IZ-Ibp" secondAttribute="centerX" id="kQ9-mo-Tfq"/>
+                                    <constraint firstItem="DcS-4t-afD" firstAttribute="top" secondItem="laE-IZ-Ibp" secondAttribute="bottom" constant="38" id="ky1-NV-Qj0"/>
+                                    <constraint firstItem="bud-TQ-PKU" firstAttribute="top" secondItem="CvU-WD-suG" secondAttribute="top" constant="15" id="rYo-gO-M8N"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="alL-to-DX0"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="CvU-WD-suG" firstAttribute="leading" secondItem="alL-to-DX0" secondAttribute="leading" id="dt7-iR-sMw"/>
+                            <constraint firstItem="CvU-WD-suG" firstAttribute="top" secondItem="alL-to-DX0" secondAttribute="top" constant="439" id="fxd-qB-szN"/>
+                            <constraint firstItem="CvU-WD-suG" firstAttribute="bottom" secondItem="alL-to-DX0" secondAttribute="bottom" constant="34" id="rFI-cw-upo"/>
+                            <constraint firstItem="alL-to-DX0" firstAttribute="trailing" secondItem="CvU-WD-suG" secondAttribute="trailing" id="wB6-py-vW3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="laE-IZ-Ibp" id="rEE-15-7HL"/>
+                        <outlet property="editLabelText" destination="GPZ-4w-c73" id="RTJ-OA-KNm"/>
+                        <outlet property="normalAlarmSettingView" destination="CvU-WD-suG" id="JAF-fl-cM9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rR6-aI-SIy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1637.68115942029" y="526.33928571428567"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="return" catalog="system" width="128" height="101"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
